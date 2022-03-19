@@ -2,9 +2,22 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: ['./src/**/*.{html,svelte}'],
+  content: ['./src/**/*.{html,svelte,js,ts}'],
   theme: {
     extend: {
+      colors: {
+        'todo-black': '#282a36',
+        'todo-gray': '#44475a',
+        'todo-white': '#f8f8f2',
+        'todo-slate': '#6272a4',
+        'todo-cyan': '#8be9fd',
+        'todo-green': '#50fa7b',
+        'todo-orange': '#ffb86c',
+        'todo-pink': '#ff79c6',
+        'todo-purple': '#bd93f9',
+        'todo-red': '#ff5555',
+        'todo-yellow': '#f1fa8c'
+      },
       fontFamily: {
         sans: ['"Avenir LT Std"', ...defaultTheme.fontFamily.sans],
         serif: ['"Baskerville URW"', ...defaultTheme.fontFamily.serif]
@@ -14,5 +27,5 @@ module.exports = {
       center: true
     }
   },
-  plugins: []
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')]
 }
