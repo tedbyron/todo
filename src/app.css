@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply bg-todo-black text-todo-white;
+  }
+
+  :root,
+  body,
+  main {
+    @apply h-full;
+  }
+
+  [type='text'] {
+    @apply bg-todo-black;
+  }
+
+  [type='text']:focus-visible,
+  button:focus-visible {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .input-container {
+    @apply focus-within:outline-none focus-within:ring-2 focus-within:ring-todo-purple focus-within:border-todo-purple;
+  }
+}

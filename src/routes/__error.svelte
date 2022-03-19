@@ -1,17 +1,17 @@
 <script context="module" lang="ts">
   import type { ErrorLoad } from '@sveltejs/kit'
 
-  export const load: ErrorLoad = ({ error, status }) => {
+  export const load: ErrorLoad = ({ status, error }) => {
     return {
       props: {
-        title: `${status}: ${error?.message}`
+        error: `${status}: ${error?.message}`
       }
     }
   }
 </script>
 
 <script lang="ts">
-  export let title: string
+  export let error: string
 </script>
 
-<h1>{title}</h1>
+<h1>{error}</h1>

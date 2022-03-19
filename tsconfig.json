@@ -1,6 +1,5 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
-  "include": ["src/*.d.ts", "svelte.config.js"],
   "compilerOptions": {
     /* Language and Environment */
     "experimentalDecorators": false,

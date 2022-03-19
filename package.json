@@ -15,10 +15,13 @@
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
+  "dependencies": {
+    "@fontsource/fredoka-one": "^4.5.3",
+    "@fontsource/inter": "^4.5.5"
+  },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
-    "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/typography": "^0.5.2",
     "@types/tailwindcss": "^3.0.9",
     "@typescript-eslint/eslint-plugin": "^4.0.1",

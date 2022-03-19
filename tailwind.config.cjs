@@ -19,13 +19,13 @@ module.exports = {
         'todo-yellow': '#f1fa8c'
       },
       fontFamily: {
-        sans: ['"Avenir LT Std"', ...defaultTheme.fontFamily.sans],
-        serif: ['"Baskerville URW"', ...defaultTheme.fontFamily.serif]
+        sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
+        serif: ['"Fredoka One"', ...defaultTheme.fontFamily.serif]
       }
     },
     container: {
       center: true
     }
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')]
+  plugins: [require('@tailwindcss/typography')]
 }
