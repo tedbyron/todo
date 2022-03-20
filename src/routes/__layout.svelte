@@ -8,4 +8,4 @@
   <nav />
 </header>
 
-<slot title description colorScheme />
+<slot />

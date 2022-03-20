@@ -17,7 +17,8 @@
   },
   "dependencies": {
     "@fontsource/fredoka-one": "^4.5.3",
-    "@fontsource/inter": "^4.5.5"
+    "@fontsource/inter": "^4.5.5",
+    "@primer/octicons": "^17.0.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",

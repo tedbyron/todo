@@ -1,5 +1,5 @@
 /* eslint-disable */
-// prettier-ignore
+//prettier-ignore
 module.exports = {
 name: "@yarnpkg/plugin-outdated",
 factory: function (require) {

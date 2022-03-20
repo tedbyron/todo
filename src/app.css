@@ -22,9 +22,3 @@
     @apply outline-none;
   }
 }
-
-@layer components {
-  .input-container {
-    @apply focus-within:outline-none focus-within:ring-2 focus-within:ring-todo-purple focus-within:border-todo-purple;
-  }
-}

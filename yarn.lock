@@ -151,6 +151,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@primer/octicons@npm:^17.0.0":
+  version: 17.0.0
+  resolution: "@primer/octicons@npm:17.0.0"
+  dependencies:
+    object-assign: ^4.1.1
+  checksum: 6ec64c4fe8199519e4c8ebf3605200bf9d0b6c6bf9524048831441270f16d5310675c9410321f0371a411d9b2aa76bedb4289754aad85b59a0ee37c37b0b1335
+  languageName: node
+  linkType: hard
+
 "@rollup/pluginutils@npm:^4.2.0":
   version: 4.2.0
   resolution: "@rollup/pluginutils@npm:4.2.0"
@@ -255,6 +264,7 @@ __metadata:
   dependencies:
     "@fontsource/fredoka-one": ^4.5.3
     "@fontsource/inter": ^4.5.5
+    "@primer/octicons": ^17.0.0
     "@sveltejs/adapter-auto": next
     "@sveltejs/kit": next
     "@tailwindcss/typography": ^0.5.2
@@ -2699,6 +2709,13 @@ __metadata:
     gauge: ^4.0.0
     set-blocking: ^2.0.0
   checksum: f1a4078a73ebc89896a832bbf869f491c32ecb12e0434b9a7499878ce8f29f22e72befe3c53cd8cdc9dbf4b4057297e783ab0b6746a8b067734de6205af4d538
+  languageName: node
+  linkType: hard
+
+"object-assign@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "object-assign@npm:4.1.1"
+  checksum: fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
   languageName: node
   linkType: hard
 
