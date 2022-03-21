@@ -1,16 +1,7 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
-    /* Language and Environment */
-    "target": "es2020",
-    "lib": ["es2020", "DOM"],
-    "experimentalDecorators": false,
-    "emitDecoratorMetadata": false,
-
     /* Modules */
-    "module": "es2020",
-    "moduleResolution": "node",
-    "baseUrl": ".",
     "paths": {
       "$lib": ["src/lib"],
       "$lib/*": ["src/lib/*"],
@@ -19,24 +10,12 @@
       "$stores": ["src/stores"],
       "$stores/*": ["src/stores/*"]
     },
-    "resolveJsonModule": true,
-    "rootDirs": [".", "./svelte-kit/types"],
-
-    /* JavaScript Support */
-    "allowJs": true,
-    "checkJs": true,
 
     /* Emit */
-    "importsNotUsedAsValues": "error",
     "noEmit": true,
-    "preserveValueImports": true,
-    "sourceMap": true,
 
     /* Interop Constraints */
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
 
     /* Type Checking */
     "strict": true,
@@ -49,9 +28,6 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "allowUnusedLabels": false,
-    "allowUnreachableCode": false,
-
-    /* Completeness */
-    "skipLibCheck": true
+    "allowUnreachableCode": false
   }
 }
