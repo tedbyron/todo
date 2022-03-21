@@ -1,19 +1,19 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { browser } from '$app/env'
+  import { todosOffline } from '$stores/todosOffline'
+  import Todo from '$lib/TodoOffline.svelte'
   import TodoForm from '$lib/TodoForm.svelte'
-  import Todo from '$lib/Todo.svelte'
-  import { todos } from '../stores/todos'
 
   if (browser) {
     onMount(() => {
       const todosJson = localStorage.getItem('todos')
 
       if (todosJson !== null) {
-        todos.set(JSON.parse(todosJson))
+        todosOffline.set(JSON.parse(todosJson))
       }
 
-      todos.subscribe((self) => {
+      return todosOffline.subscribe((self) => {
         localStorage.setItem('todos', JSON.stringify(self))
       })
     })
@@ -27,9 +27,11 @@
 <section class="container my-6 flex flex-col items-center">
   <TodoForm />
 
-  <ul class="max-w-md w-full mt-6 flex flex-col gap-y-6">
-    {#each $todos.sort((a, b) => b.id - a.id) as todo (todo.id)}
-      <Todo {todo} />
-    {/each}
-  </ul>
+  {#if $todosOffline.length > 0}
+    <ul class="max-w-md w-full mt-6 flex flex-col gap-y-6">
+      {#each $todosOffline.sort((a, b) => b.id - a.id) as todo (todo.id)}
+        <Todo {todo} />
+      {/each}
+    </ul>
+  {/if}
 </section>

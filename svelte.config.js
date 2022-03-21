@@ -1,3 +1,4 @@
+import path from 'path'
 import adapter from '@sveltejs/adapter-auto'
 import preprocess from 'svelte-preprocess'
 
@@ -7,7 +8,13 @@ const config = {
   kit: {
     adapter: adapter(),
     vite: {
-      envPrefix: 'TODO_'
+      envPrefix: 'TODO_',
+      resolve: {
+        alias: {
+          $routes: path.resolve('src', 'routes'),
+          $stores: path.resolve('src', 'stores')
+        }
+      }
     }
   }
 }

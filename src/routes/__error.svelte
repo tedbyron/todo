@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script lang="ts" context="module">
   import type { ErrorLoad } from '@sveltejs/kit'
 
   export const load: ErrorLoad = ({ status, error }) => {

@@ -1,8 +1,7 @@
 <script lang="ts">
   import octicons from '@primer/octicons'
-  import { onDestroy } from 'svelte'
-  import { deleteTodo, toggleTodo } from '../stores/todos'
-  import type { Todo } from '../stores/todos'
+  import { deleteTodo, toggleTodo } from '$stores/todosOffline'
+  import type { Todo } from '$stores/todos'
 
   export let todo: Todo
 
@@ -14,8 +13,6 @@
     'aria-label': 'Delete',
     fill: 'currentColor'
   })
-
-  onDestroy(() => {})
 </script>
 
 <li

@@ -13,11 +13,13 @@
     @apply h-full;
   }
 
-  [type='text'] {
+  [type='text'],
+  [type='email'] {
     @apply bg-todo-black;
   }
 
   [type='text']:focus-visible,
+  [type='email']:focus-visible,
   button:focus-visible {
     @apply outline-none;
   }

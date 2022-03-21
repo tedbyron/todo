@@ -7,5 +7,5 @@
 
 ```sh
 yarn      # install dependencies
-yarn dev  # generate .svelte-kit for tsconfig, then ⌃C
+yarn dev  # generate .svelte-kit for tsconfig
 ```
