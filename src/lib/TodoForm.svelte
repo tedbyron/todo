@@ -1,5 +1,6 @@
 <script lang="ts">
   import octicons from '@primer/octicons'
+  /* import { user } from '$stores/auth' */
   import { addTodo as storeTodo } from '$stores/todosOffline'
 
   let input = ''

@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { browser } from '$app/env'
   import { todosOffline } from '$stores/todosOffline'
-  import Todo from '$lib/TodoOffline.svelte'
+  import TodoOffline from '$lib/TodoOffline.svelte'
   import TodoForm from '$lib/TodoForm.svelte'
 
   if (browser) {
@@ -30,7 +30,7 @@
   {#if $todosOffline.length > 0}
     <ul class="max-w-md w-full mt-6 flex flex-col gap-y-6">
       {#each $todosOffline.sort((a, b) => b.id - a.id) as todo (todo.id)}
-        <Todo {todo} />
+        <TodoOffline {todo} />
       {/each}
     </ul>
   {/if}

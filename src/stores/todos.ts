@@ -3,6 +3,7 @@ import supabase from '$lib/supabase'
 
 export interface Todo {
   id: number
+  userId?: string
   text: string
   done: boolean
 }
@@ -23,7 +24,7 @@ export const loadTodos = async (): Promise<void> => {
 export const addTodo = async (text: string, userId: string): Promise<void> => {
   const { data, error } = await supabase
     .from('todos')
-    .insert([{ id: Date.now(), text, user_id: userId, done: false }])
+    .insert([{ id: Date.now(), user_id: userId, text, done: false }])
 
   if (error !== null) {
     console.error(error)
