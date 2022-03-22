@@ -2,18 +2,19 @@
   import octicons from '@primer/octicons'
   import supabase from '$lib/supabase'
   import LoadingIcon from '$lib/assets/LoadingIcon.svelte'
+  import type { UserCredentials } from '@supabase/supabase-js'
 
   let loading = false
   let emailSent = false
   let email: string
 
   // Send a sign in link to the input email.
-  const signIn = async (): Promise<void> => {
+  const signIn = async (userCredentials: UserCredentials, successVar?: boolean): Promise<void> => {
     try {
       loading = true
-      const { error } = await supabase.auth.signIn({ email })
+      const { error } = await supabase.auth.signIn(userCredentials)
       if (error) throw error
-      emailSent = true
+      if (successVar !== undefined) successVar = true
     } catch (error: unknown) {
       console.error(error)
     } finally {
@@ -25,11 +26,15 @@
     'aria-label': 'User',
     fill: 'currentColor'
   })
+  const markGithubIcon = octicons['mark-github'].toSVG({
+    'aria-label': 'GitHub',
+    fill: 'currentColor'
+  })
 </script>
 
 <section class="container my-6">
   <form
-    on:submit|preventDefault={signIn}
+    on:submit|preventDefault={async () => await signIn({ email }, emailSent)}
     class="flex flex-col gap-3 mx-auto max-w-md p-6 border border-todo-white rounded-lg"
   >
     {#if emailSent}
@@ -39,8 +44,6 @@
         <span class="text-todo-purple">{email}</span>
       </span>
     {:else}
-      <label for="login-email" class="px-3">Email</label>
-
       <div
         class="flex border border-todo-white rounded-md focus-within:outline-none focus-within:ring-2 focus-within:ring-todo-purple focus-within:border-todo-purple"
       >
@@ -50,6 +53,7 @@
           type="email"
           id="login-email"
           autofocus
+          placeholder="Email"
           bind:value={email}
           class="grow py-3 pl-3 rounded-l-md"
         />
@@ -66,6 +70,17 @@
           {:else}
             {@html arrowRightIcon}
           {/if}
+        </button>
+      </div>
+
+      <!-- GitHub login -->
+      <div class="mt-3">
+        <button
+          class="flex items-center gap-2 p-3 rounded-lg hover:text-todo-purple focus-visible:text-todo-purple hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50"
+        >
+          {@html markGithubIcon}
+          GitHub sign-in
+          {@html arrowRightIcon}
         </button>
       </div>
     {/if}
