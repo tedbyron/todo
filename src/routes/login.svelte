@@ -4,15 +4,16 @@
   import LoadingIcon from '$lib/assets/LoadingIcon.svelte'
 
   let loading = false
-  let sent = false
+  let emailSent = false
   let email: string
 
+  // Send a sign in link to the input email.
   const signIn = async (): Promise<void> => {
     try {
       loading = true
       const { error } = await supabase.auth.signIn({ email })
       if (error) throw error
-      sent = true
+      emailSent = true
     } catch (error: unknown) {
       console.error(error)
     } finally {
@@ -20,7 +21,7 @@
     }
   }
 
-  const arrowIcon = octicons['arrow-right'].toSVG({
+  const arrowRightIcon = octicons['arrow-right'].toSVG({
     'aria-label': 'User',
     fill: 'currentColor'
   })
@@ -31,7 +32,8 @@
     on:submit|preventDefault={signIn}
     class="flex flex-col gap-3 mx-auto max-w-md p-6 border border-todo-white rounded-lg"
   >
-    {#if sent}
+    {#if emailSent}
+      <!-- Email sent -->
       <span class="px-3 text-center">
         Sign-in email sent to
         <span class="text-todo-purple">{email}</span>
@@ -62,7 +64,7 @@
           {#if loading}
             <LoadingIcon class="animate-spin w-4 h-4 text-white" />
           {:else}
-            {@html arrowIcon}
+            {@html arrowRightIcon}
           {/if}
         </button>
       </div>

@@ -22,7 +22,7 @@
     "@supabase/supabase-js": "^1.31.1"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "@tailwindcss/typography": "^0.5.2",
     "@types/tailwindcss": "^3.0.9",

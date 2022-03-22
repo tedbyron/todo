@@ -8,6 +8,7 @@
   let input = ''
   let loading = false
 
+  // Add a todo to the database if the user is logged in, or else localStorage.
   const addTodo = async (): Promise<void> => {
     loading = true
     if (input.trim() === '') return
@@ -18,7 +19,7 @@
     loading = false
   }
 
-  const addIcon = octicons.plus.toSVG({
+  const plusIcon = octicons.plus.toSVG({
     'aria-label': 'Add to list',
     fill: 'currentColor'
   })
@@ -42,7 +43,7 @@
       {#if loading}
         <LoadingIcon class="animate-spin w-4 h-4 text-white" />
       {:else}
-        {@html addIcon}
+        {@html plusIcon}
       {/if}
     </button>
   </div>

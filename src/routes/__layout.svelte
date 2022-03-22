@@ -12,6 +12,7 @@
   import supabase from '$lib/supabase'
   import Header from '$lib/Header.svelte'
 
+  // Load todos.
   onMount(async () => {
     user.set(supabase.auth.user())
     if ($user === null) {
@@ -23,13 +24,15 @@
     }
   })
 
+  // Auth state change subscriber.
   supabase.auth.onAuthStateChange(async (_, session) => {
     if (session !== null && session.user !== null) {
       localStorageUnsub()
       user.set(session.user)
       await loadTodos()
 
-      if ($page.routeId !== '') {
+      // Redirect to the home page on sign in.
+      if ($page.routeId === 'login') {
         goto('/')
       }
     } else {

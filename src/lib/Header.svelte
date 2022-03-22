@@ -8,6 +8,7 @@
 
   let loading = false
 
+  // Sign out the supabase user.
   const signOut = async (): Promise<void> => {
     try {
       loading = true
@@ -20,7 +21,7 @@
     }
   }
 
-  const profileIcon = octicons.person.toSVG({
+  const personIcon = octicons.person.toSVG({
     'aria-label': 'User',
     fill: 'currentColor'
   })
@@ -51,8 +52,8 @@
     <div class="justify-self-end flex items-center gap-3">
       {#if $user}
         <!-- Username -->
-        <div title={$user.id} class="flex items-center gap-2 p-3 rounded-lg">
-          {@html profileIcon}
+        <div title={`ID: ${$user.id}`} class="flex items-center gap-2 p-3 rounded-lg">
+          {@html personIcon}
           {$user.email}
         </div>
 
@@ -65,7 +66,7 @@
           on:click={signOut}
           class="flex items-center gap-2 p-3 rounded-lg {loading
             ? 'pointer-events-none'
-            : 'hover:text-todo-purple hover:bg-todo-gray/50'}"
+            : 'hover:text-todo-purple focus-visible:text-todo-purple hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50'}"
         >
           Sign out
           {#if loading}
@@ -79,7 +80,7 @@
         <a
           sveltekit:prefetch
           href="/login"
-          class="flex items-center gap-2 p-3 rounded-lg hover:text-todo-purple hover:bg-todo-gray/50"
+          class="flex items-center gap-2 p-3 rounded-lg hover:text-todo-purple focus-visible:text-todo-purple hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50"
         >
           Sign in
           {@html signInIcon}
