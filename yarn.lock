@@ -319,22 +319,22 @@ __metadata:
     "@sveltejs/kit": next
     "@tailwindcss/typography": ^0.5.2
     "@types/tailwindcss": ^3.0.9
-    "@typescript-eslint/eslint-plugin": ^4.0.1
-    "@typescript-eslint/parser": ^4.0.0
+    "@typescript-eslint/eslint-plugin": ^4.33.0
+    "@typescript-eslint/parser": ^4.33.0
     autoprefixer: ^10.4.4
     eslint: ^7.32.0
-    eslint-config-prettier: ^8.3.0
+    eslint-config-prettier: ^8.5.0
     eslint-config-standard-with-typescript: ^21.0.1
     eslint-plugin-import: ^2.25.4
     eslint-plugin-node: ^11.1.0
-    eslint-plugin-promise: ^5.0.0
-    eslint-plugin-svelte3: ^3.2.1
+    eslint-plugin-promise: ^5.2.0
+    eslint-plugin-svelte3: ^3.4.1
     postcss: ^8.4.12
-    prettier: ^2.5.1
-    prettier-plugin-svelte: ^2.5.0
-    svelte: ^3.44.0
-    svelte-check: ^2.2.6
-    svelte-preprocess: ^4.10.1
+    prettier: ^2.6.0
+    prettier-plugin-svelte: ^2.6.0
+    svelte: ^3.46.4
+    svelte-check: ^2.4.6
+    svelte-preprocess: ^4.10.4
     tailwindcss: ^3.0.23
     tslib: ^2.3.1
     typescript: ~4.6.2
@@ -408,7 +408,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^4.0.1":
+"@typescript-eslint/eslint-plugin@npm:^4.33.0":
   version: 4.33.0
   resolution: "@typescript-eslint/eslint-plugin@npm:4.33.0"
   dependencies:
@@ -446,7 +446,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.0.0":
+"@typescript-eslint/parser@npm:^4.0.0, @typescript-eslint/parser@npm:^4.33.0":
   version: 4.33.0
   resolution: "@typescript-eslint/parser@npm:4.33.0"
   dependencies:
@@ -1512,7 +1512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.3.0":
+"eslint-config-prettier@npm:^8.5.0":
   version: 8.5.0
   resolution: "eslint-config-prettier@npm:8.5.0"
   peerDependencies:
@@ -1623,7 +1623,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:^5.0.0":
+"eslint-plugin-promise@npm:^5.2.0":
   version: 5.2.0
   resolution: "eslint-plugin-promise@npm:5.2.0"
   peerDependencies:
@@ -1632,7 +1632,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-svelte3@npm:^3.2.1":
+"eslint-plugin-svelte3@npm:^3.4.1":
   version: 3.4.1
   resolution: "eslint-plugin-svelte3@npm:3.4.1"
   peerDependencies:
@@ -3130,7 +3130,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-svelte@npm:^2.5.0":
+"prettier-plugin-svelte@npm:^2.6.0":
   version: 2.6.0
   resolution: "prettier-plugin-svelte@npm:2.6.0"
   peerDependencies:
@@ -3140,7 +3140,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.5.1":
+"prettier@npm:^2.6.0":
   version: 2.6.0
   resolution: "prettier@npm:2.6.0"
   bin:
@@ -3610,7 +3610,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-check@npm:^2.2.6":
+"svelte-check@npm:^2.4.6":
   version: 2.4.6
   resolution: "svelte-check@npm:2.4.6"
   dependencies:
@@ -3640,7 +3640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-preprocess@npm:^4.0.0, svelte-preprocess@npm:^4.10.1":
+"svelte-preprocess@npm:^4.0.0, svelte-preprocess@npm:^4.10.4":
   version: 4.10.4
   resolution: "svelte-preprocess@npm:4.10.4"
   dependencies:
@@ -3689,7 +3689,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^3.44.0":
+"svelte@npm:^3.46.4":
   version: 3.46.4
   resolution: "svelte@npm:3.46.4"
   checksum: 929e6790cdd6d94c123b4b8a7b5a541164dbea6d4f4ed311f4e65cde60caa1c704e531bbf2e63519d1a96163cd3f812c6e5be5b2fd05f72d0177af5fd8ca8637
