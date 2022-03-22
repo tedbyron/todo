@@ -76,6 +76,7 @@
       <!-- GitHub login -->
       <div class="mt-3">
         <button
+          on:click={async () => await signIn({ provider: 'github' })}
           class="flex items-center gap-2 p-3 rounded-lg hover:text-todo-purple focus-visible:text-todo-purple hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50"
         >
           {@html markGithubIcon}
