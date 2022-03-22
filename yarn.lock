@@ -97,6 +97,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iarna/toml@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "@iarna/toml@npm:2.2.5"
+  checksum: b63b2b2c4fd67969a6291543ada0303d45593801ee744b60f5390f183c03d9192bc67a217abb24be945158f1935f02840d9ffff40c0142aa171b5d3b6b6a3ea5
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -212,12 +219,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/adapter-static@npm:next":
-  version: 1.0.0-next.29
-  resolution: "@sveltejs/adapter-static@npm:1.0.0-next.29"
+"@sveltejs/adapter-auto@npm:next":
+  version: 1.0.0-next.33
+  resolution: "@sveltejs/adapter-auto@npm:1.0.0-next.33"
   dependencies:
+    "@sveltejs/adapter-cloudflare": 1.0.0-next.16
+    "@sveltejs/adapter-netlify": 1.0.0-next.51
+    "@sveltejs/adapter-vercel": 1.0.0-next.47
+  checksum: 1a045e4ae6b3ca0b998a75c54d31f52b0b2fae9b8ddd5c23ed8ef632957ad418ba2d52d6dceac603743d35a1d5a626256c97de31825048a641410dc8dae3aa8c
+  languageName: node
+  linkType: hard
+
+"@sveltejs/adapter-cloudflare@npm:1.0.0-next.16":
+  version: 1.0.0-next.16
+  resolution: "@sveltejs/adapter-cloudflare@npm:1.0.0-next.16"
+  dependencies:
+    esbuild: ^0.14.21
+  checksum: 7650a8ea0aaeb4cae3f8a7dcda2045e8bf586c54dd7c10827d7680009f923655df4faf70fdea0fd8af1c0399ac46e4a3d7479419478c38d25085735e2ad6d181
+  languageName: node
+  linkType: hard
+
+"@sveltejs/adapter-netlify@npm:1.0.0-next.51":
+  version: 1.0.0-next.51
+  resolution: "@sveltejs/adapter-netlify@npm:1.0.0-next.51"
+  dependencies:
+    "@iarna/toml": ^2.2.5
+    esbuild: ^0.14.21
     tiny-glob: ^0.2.9
-  checksum: 4cd130ff79fc7db5449eedc730aecdf103d93ed09a03e8c949a0613953434cd62a3ad147e43600af0894795d540a2f4fd2d0957ea118e33d3caeded186e1e93f
+  checksum: abb995958a888eb20a3deb92e787c2b51647ba5d6d57cdbebbb0eb5e5e200913755a5518c1e1e4ec08e9764e0b91da9afd60a4518cf032c3c238f4348917dbf4
+  languageName: node
+  linkType: hard
+
+"@sveltejs/adapter-vercel@npm:1.0.0-next.47":
+  version: 1.0.0-next.47
+  resolution: "@sveltejs/adapter-vercel@npm:1.0.0-next.47"
+  dependencies:
+    esbuild: ^0.14.21
+  checksum: 754ab47d5fca2474ec8503b70956457aaf18fb0e3566fc77463ca58188b7b4fe5199424742af64bc294c834b64ca4c668af20864f5bac3ae17a5d24418341895
   languageName: node
   linkType: hard
 
@@ -277,7 +315,7 @@ __metadata:
     "@fontsource/inter": ^4.5.5
     "@primer/octicons": ^17.0.0
     "@supabase/supabase-js": ^1.31.1
-    "@sveltejs/adapter-static": next
+    "@sveltejs/adapter-auto": next
     "@sveltejs/kit": next
     "@tailwindcss/typography": ^0.5.2
     "@types/tailwindcss": ^3.0.9
@@ -1382,7 +1420,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.14.14":
+"esbuild@npm:^0.14.14, esbuild@npm:^0.14.21":
   version: 0.14.27
   resolution: "esbuild@npm:0.14.27"
   dependencies:
