@@ -3,18 +3,35 @@
   import '@fontsource/inter'
   import '../app.css'
 
-  import supabase from '$lib/supabase'
+  import { onMount } from 'svelte'
+  import { page } from '$app/stores'
+  import { goto } from '$app/navigation'
   import { user } from '$stores/auth'
-  import Auth from '$lib/Auth.svelte'
   import { loadTodos } from '$stores/todos'
   import { loadTodosOffline, localStorageSub, localStorageUnsub } from '$stores/todosOffline'
+  import supabase from '$lib/supabase'
+  import Header from '$lib/Header.svelte'
 
-  user.set(supabase.auth.user())
-  supabase.auth.onAuthStateChange((_, session) => {
+  onMount(async () => {
+    user.set(supabase.auth.user())
+    if ($user === null) {
+      loadTodosOffline()
+      localStorageSub()
+    } else {
+      localStorageUnsub()
+      await loadTodos()
+    }
+  })
+
+  supabase.auth.onAuthStateChange(async (_, session) => {
     if (session !== null && session.user !== null) {
       localStorageUnsub()
       user.set(session.user)
-      loadTodos()
+      await loadTodos()
+
+      if ($page.routeId !== '') {
+        goto('/')
+      }
     } else {
       user.set(null)
       loadTodosOffline()
@@ -23,6 +40,5 @@
   })
 </script>
 
-<!-- TODO: conditional nav sign-in/out -->
-<Auth />
+<Header />
 <slot />

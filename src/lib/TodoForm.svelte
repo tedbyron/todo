@@ -3,13 +3,19 @@
   import { user } from '$stores/auth'
   import { addTodo as storeTodo } from '$stores/todos'
   import { addTodoOffline as storeTodoOffline } from '$stores/todosOffline'
+  import LoadingIcon from '$lib/assets/LoadingIcon.svelte'
 
   let input = ''
+  let loading = false
 
   const addTodo = async (): Promise<void> => {
+    loading = true
     if (input.trim() === '') return
+
     $user ? await storeTodo(input, $user.id) : storeTodoOffline(input)
+
     input = ''
+    loading = false
   }
 
   const addIcon = octicons.plus.toSVG({
@@ -22,12 +28,22 @@
   <div
     class="flex border border-todo-white rounded-lg focus-within:outline-none focus-within:ring-2 focus-within:ring-todo-purple focus-within:border-todo-purple"
   >
+    <!-- Text input -->
     <!-- svelte-ignore a11y-autofocus -->
     <input type="text" autofocus bind:value={input} class="grow py-3 pl-3 rounded-l-lg" />
+
+    <!-- Submit button -->
     <button
-      class="px-3 rounded-r-lg transition-colors hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50 hover:text-todo-purple focus-visible:text-todo-purple"
+      disabled={loading}
+      class="px-3 rounded-r-lg {loading
+        ? 'pointer-events-none'
+        : 'hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50 hover:text-todo-purple focus-visible:text-todo-purple'}"
     >
-      {@html addIcon}
+      {#if loading}
+        <LoadingIcon class="animate-spin w-4 h-4 text-white" />
+      {:else}
+        {@html addIcon}
+      {/if}
     </button>
   </div>
 </form>

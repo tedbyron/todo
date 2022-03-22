@@ -7,20 +7,21 @@
     @apply bg-todo-black text-todo-white;
   }
 
-  :root,
-  body,
-  main {
-    @apply h-full;
-  }
-
   [type='text'],
   [type='email'] {
     @apply bg-todo-black;
   }
 
+  a:focus-visible,
   [type='text']:focus-visible,
   [type='email']:focus-visible,
   button:focus-visible {
     @apply outline-none;
+  }
+
+  a,
+  button,
+  [type='button'] {
+    @apply transition-colors;
   }
 }
