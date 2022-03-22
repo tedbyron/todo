@@ -43,5 +43,15 @@
   })
 </script>
 
+<svelte:head>
+  <meta name="description" content="SvelteKit + Supabase todo list." />
+  <meta name="url" content={$page.url.href} />
+  <meta name="color-scheme" content="#bd93f9" />
+  <meta property="og:description" content="SvelteKit + Supabase todo list." />
+  <meta property="og:url" content={$page.url.href} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+</svelte:head>
+
 <Header />
 <slot />

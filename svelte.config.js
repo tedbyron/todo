@@ -7,6 +7,11 @@ const config = {
   preprocess: preprocess(),
   kit: {
     adapter: adapter(),
+    csp: {
+      directives: {
+        'script-src': ['self']
+      }
+    },
     vite: {
       envPrefix: 'TODO_',
       resolve: {

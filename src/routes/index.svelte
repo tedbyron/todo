@@ -6,6 +6,11 @@
   import TodoForm from '$lib/TodoForm.svelte'
 </script>
 
+<svelte:head>
+  <title>Todo</title>
+  <meta property="og:title" content="Todo" />
+</svelte:head>
+
 <section class="container my-6 flex flex-col items-center">
   <TodoForm />
 

@@ -32,6 +32,7 @@
     <!-- Toggle done button -->
     <button
       type="button"
+      aria-label="Toggle done"
       class="p-3 hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50 hover:text-todo-green focus-visible:text-todo-green
         {todo.done ? 'text-todo-green' : ''}"
       on:click={async () => {
@@ -44,6 +45,7 @@
     <!-- Delete button -->
     <button
       type="button"
+      aria-label="Delete"
       class="p-3 hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50 hover:text-todo-red focus-visible:text-todo-red"
       on:click={async () => {
         $user ? await deleteTodo(todo.id) : deleteTodoOffline(todo.id)

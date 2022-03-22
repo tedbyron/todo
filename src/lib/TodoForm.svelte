@@ -31,7 +31,13 @@
   >
     <!-- Text input -->
     <!-- svelte-ignore a11y-autofocus -->
-    <input type="text" autofocus bind:value={input} class="grow py-3 pl-3 rounded-l-lg" />
+    <input
+      type="text"
+      autofocus
+      bind:value={input}
+      aria-label="Todo text"
+      class="grow py-3 pl-3 rounded-l-lg"
+    />
 
     <!-- Submit button -->
     <button

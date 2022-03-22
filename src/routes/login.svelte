@@ -23,14 +23,19 @@
   }
 
   const arrowRightIcon = octicons['arrow-right'].toSVG({
-    'aria-label': 'User',
+    'aria-label': 'Submit',
     fill: 'currentColor'
   })
   const markGithubIcon = octicons['mark-github'].toSVG({
-    'aria-label': 'GitHub',
+    'aria-label': 'GitHub logo',
     fill: 'currentColor'
   })
 </script>
+
+<svelte:head>
+  <title>Todo | Sign in</title>
+  <meta property="og:title" content="Todo | Sign in" />
+</svelte:head>
 
 <section class="container my-6">
   <form
@@ -52,6 +57,7 @@
         <input
           type="email"
           id="login-email"
+          aria-label="Email login"
           autofocus
           placeholder="Email"
           bind:value={email}
@@ -80,7 +86,7 @@
           class="flex items-center gap-2 p-3 rounded-lg hover:text-todo-purple focus-visible:text-todo-purple hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50"
         >
           {@html markGithubIcon}
-          GitHub sign-in
+          GitHub sign in
           {@html arrowRightIcon}
         </button>
       </div>
