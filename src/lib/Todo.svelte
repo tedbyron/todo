@@ -1,9 +1,10 @@
 <script lang="ts">
   import octicons from '@primer/octicons'
-  import { deleteTodo, toggleTodo } from '$stores/todosOffline'
-  import type { Todo } from '$stores/todos'
+  import { user } from '$stores/auth'
+  import { deleteTodo, toggleTodo, type Todo } from '$stores/todos'
+  import { deleteTodoOffline, toggleTodoOffline, type TodoOffline } from '$stores/todosOffline'
 
-  export let todo: Todo
+  export let todo: Todo | TodoOffline
 
   const toggleIcon = octicons.check.toSVG({
     'aria-label': 'Toggle done',
@@ -30,14 +31,18 @@
       type="button"
       class="p-3 hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50 hover:text-todo-green focus-visible:text-todo-green
         {todo.done ? 'text-todo-green' : ''}"
-      on:click={() => toggleTodo(todo.id)}
+      on:click={async () => {
+        $user ? await toggleTodo(todo.id, todo.done) : toggleTodoOffline(todo.id)
+      }}
     >
       {@html toggleIcon}
     </button>
     <button
       type="button"
       class="p-3 hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50 hover:text-todo-red focus-visible:text-todo-red"
-      on:click={() => deleteTodo(todo.id)}
+      on:click={async () => {
+        $user ? await deleteTodo(todo.id) : deleteTodoOffline(todo.id)
+      }}
     >
       {@html deleteIcon}
     </button>

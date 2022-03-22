@@ -1,13 +1,14 @@
 <script lang="ts">
   import octicons from '@primer/octicons'
-  /* import { user } from '$stores/auth' */
-  import { addTodo as storeTodo } from '$stores/todosOffline'
+  import { user } from '$stores/auth'
+  import { addTodo as storeTodo } from '$stores/todos'
+  import { addTodoOffline as storeTodoOffline } from '$stores/todosOffline'
 
   let input = ''
 
-  const addTodo = (): void => {
+  const addTodo = async (): Promise<void> => {
     if (input.trim() === '') return
-    storeTodo(input)
+    $user ? await storeTodo(input, $user.id) : storeTodoOffline(input)
     input = ''
   }
 

@@ -3,7 +3,7 @@ import supabase from '$lib/supabase'
 
 export interface Todo {
   id: number
-  userId?: string
+  userId: string
   text: string
   done: boolean
 }
@@ -22,16 +22,15 @@ export const loadTodos = async (): Promise<void> => {
 }
 
 export const addTodo = async (text: string, userId: string): Promise<void> => {
-  const { data, error } = await supabase
-    .from('todos')
-    .insert([{ id: Date.now(), user_id: userId, text, done: false }])
+  const todo = { id: Date.now(), userId, text, done: false }
+  const { error } = await supabase.from('todos').insert([todo])
 
   if (error !== null) {
     console.error(error)
     return
   }
 
-  todos.update((self) => [data[0], ...self])
+  todos.update((self) => [todo, ...self])
 }
 
 export const deleteTodo = async (id: number): Promise<void> => {
