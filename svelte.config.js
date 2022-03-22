@@ -9,6 +9,8 @@ const config = {
     adapter: adapter(),
     csp: {
       directives: {
+        'base-uri': ['self'],
+        'object-src': ['none'],
         'script-src': ['self']
       }
     },
