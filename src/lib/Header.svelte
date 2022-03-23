@@ -50,11 +50,11 @@
     </a>
 
     <div class="justify-self-end flex items-center gap-3 pr-3 sm:pr-0">
-      {#if !$user}
-        <!-- Username -->
-        <div title={`ID: ${'abc123'}`} class="hidden lg:flex items-center gap-2 p-3 rounded-lg">
+      {#if $user}
+        <!-- User info -->
+        <div title={`ID: ${$user.id}`} class="hidden lg:flex items-center gap-2 p-3 rounded-lg">
           {@html personIcon}
-          {'tbyron11@gmail.com'}
+          {$user.email}
         </div>
 
         <hr class="hidden lg:block h-1/3 border-r border-todo-white" />
