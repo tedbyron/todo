@@ -37,7 +37,7 @@
   <meta property="og:title" content="Todo | Sign in" />
 </svelte:head>
 
-<section class="container my-6">
+<section class="container my-6 px-3 sm:px-0">
   <form
     on:submit|preventDefault={async () => await signIn({ email }, emailSent)}
     class="flex flex-col gap-3 mx-auto max-w-md p-6 border border-todo-white rounded-lg"
