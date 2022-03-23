@@ -15,7 +15,7 @@
   <TodoForm />
 
   {#if $user ? $todos.length > 0 : $todosOffline.length > 0}
-    <ul class="max-w-md w-full mt-6 flex flex-col gap-y-6">
+    <ul class="max-w-md w-full mt-6 px-3 sm:px-0 flex flex-col gap-y-6">
       {#each ($user ? $todos : $todosOffline).sort((a, b) => b.id - a.id) as todo (todo.id)}
         <Todo {todo} />
       {/each}

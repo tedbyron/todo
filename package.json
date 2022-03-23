@@ -19,7 +19,7 @@
     "@fontsource/fredoka-one": "^4.5.3",
     "@fontsource/inter": "^4.5.5",
     "@primer/octicons": "^17.0.0",
-    "@supabase/supabase-js": "^1.31.1"
+    "@supabase/supabase-js": "^1.31.2"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",

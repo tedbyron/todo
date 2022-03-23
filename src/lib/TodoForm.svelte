@@ -10,8 +10,8 @@
 
   // Add a todo to the database if the user is logged in, or else localStorage.
   const addTodo = async (): Promise<void> => {
-    loading = true
     if (input.trim() === '') return
+    loading = true
 
     $user ? await storeTodo(input, $user.id) : storeTodoOffline(input)
 

@@ -207,15 +207,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@supabase/supabase-js@npm:^1.31.1":
-  version: 1.31.1
-  resolution: "@supabase/supabase-js@npm:1.31.1"
+"@supabase/supabase-js@npm:^1.31.2":
+  version: 1.31.2
+  resolution: "@supabase/supabase-js@npm:1.31.2"
   dependencies:
     "@supabase/gotrue-js": ^1.22.3
     "@supabase/postgrest-js": ^0.37.0
     "@supabase/realtime-js": ^1.3.6
     "@supabase/storage-js": ^1.6.4
-  checksum: 62cbb537d8b5e35fd372ff45403860bb2d3e50939bea6d4c0ed49020dc69b13262c61b9ff38dc6a8456ce58a2e5175ea8972b5a030e45526ae74d6f6c333ea01
+  checksum: 7cf51aa40c13f5f74b461f337e43aabd7bb8959c34b9383ceeb424480723785246262c8257106a5299b658805f4d07c40186dbc320591804f6976abce699922e
   languageName: node
   linkType: hard
 
@@ -314,7 +314,7 @@ __metadata:
     "@fontsource/fredoka-one": ^4.5.3
     "@fontsource/inter": ^4.5.5
     "@primer/octicons": ^17.0.0
-    "@supabase/supabase-js": ^1.31.1
+    "@supabase/supabase-js": ^1.31.2
     "@sveltejs/adapter-auto": next
     "@sveltejs/kit": next
     "@tailwindcss/typography": ^0.5.2

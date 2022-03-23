@@ -43,21 +43,21 @@
     <!-- Site heading -->
     <a sveltekit:prefetch href="/" class="group mx-auto">
       <h1
-        class="font-serif border-b-8 group-hover:border-todo-purple group-focus-visible:border-todo-purple rounded-b-sm text-5xl lg:text-6xl group-hover:text-todo-purple group-focus-visible:text-todo-purple"
+        class="font-serif border-b-8 group-hover:border-todo-purple group-focus-visible:border-todo-purple rounded-b-sm text-3xl md:text-5xl lg:text-6xl group-hover:text-todo-purple group-focus-visible:text-todo-purple"
       >
         Todo
       </h1>
     </a>
 
-    <div class="justify-self-end flex items-center gap-3">
-      {#if $user}
+    <div class="justify-self-end flex items-center gap-3 pr-3 sm:pr-0">
+      {#if !$user}
         <!-- Username -->
-        <div title={`ID: ${$user.id}`} class="flex items-center gap-2 p-3 rounded-lg">
+        <div title={`ID: ${'abc123'}`} class="hidden lg:flex items-center gap-2 p-3 rounded-lg">
           {@html personIcon}
-          {$user.email}
+          {'tbyron11@gmail.com'}
         </div>
 
-        <hr class="h-1/3 border-r border-todo-white" />
+        <hr class="hidden lg:block h-1/3 border-r border-todo-white" />
 
         <!-- Sign out button -->
         <button
@@ -68,7 +68,7 @@
             ? 'pointer-events-none'
             : 'hover:text-todo-purple focus-visible:text-todo-purple hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50'}"
         >
-          Sign out
+          <span class="hidden sm:inline">Sign out</span>
           {#if loading}
             <LoadingIcon class="animate-spin w-4 h-4 text-white" />
           {:else}
@@ -82,7 +82,7 @@
           href="/login"
           class="flex items-center gap-2 p-3 rounded-lg hover:text-todo-purple focus-visible:text-todo-purple hover:bg-todo-gray/50 focus-visible:bg-todo-gray/50"
         >
-          Sign in
+          <span class="hidden sm:inline">Sign in</span>
           {@html signInIcon}
         </a>
       {/if}
